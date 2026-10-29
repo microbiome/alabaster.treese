@@ -22,7 +22,8 @@ biocViews:
     Phylogenetics,
     Microbiome
 License: Artistic-2.0
-URL: https://github.com/microbiome/alabaster.treese
+URL: https://github.com/microbiome/alabaster.treese,
+    https://microbiome.github.io/alabaster.treese
 BugReports: https://github.com/microbiome/alabaster.treese/issues
 Depends:
     TreeSummarizedExperiment,
