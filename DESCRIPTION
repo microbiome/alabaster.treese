@@ -1,0 +1,44 @@
+Package: alabaster.treese
+Title: Load and Save TreeSummarizedExperiment from File
+Version: 0.99.0
+Date: 2026-10-28
+Authors@R:
+    c(person(given = "Tuomas", family = "Borman", role = c("aut", "cre"),
+             email = "tuomas.v.borman@utu.fi",
+             comment = c(ORCID = "0000-0002-8563-8884")),
+      person(given = "Leo", family = "Lahti", role = c("aut"),
+             email = "leo.lahti@iki.fi",
+             comment = c(ORCID = "0000-0001-5537-637X"))
+    )
+Description:
+    Save TreeSummarizedExperiment into file artifacts, and load them back into
+    memory. This is a more portable alternative to serialization of such
+    objects into RDS files. Each artifact is associated with metadata for
+    further interpretation; downstream applications can enrich this metadata
+    with context-specific properties.
+biocViews:
+    DataImport,
+    DataRepresentation,
+    Phylogenetics,
+    Microbiome
+License: Artistic-2.0
+URL: https://github.com/microbiome/alabaster.treese
+BugReports: https://github.com/microbiome/alabaster.treese/issues
+Depends:
+    TreeSummarizedExperiment,
+    alabaster.base
+Imports:
+    methods,
+    alabaster.sce,
+    alabaster.string,
+    Biostrings,
+    jsonlite
+Suggests:
+    ape,
+    knitr,
+    testthat,
+    BiocStyle,
+    rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Config/roxygen2/version: 8.1.0

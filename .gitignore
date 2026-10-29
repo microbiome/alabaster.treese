@@ -1,0 +1,7 @@
+*.swp
+*.rds
+*.html
+.Rproj.user
+alabaster.treese.Rproj
+.RData
+.Rhistory

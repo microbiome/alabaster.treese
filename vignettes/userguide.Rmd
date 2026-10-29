@@ -1,0 +1,79 @@
+---
+title: Saving `TreeSummarizedExperiment`s to artifacts and back again
+author:
+- name: Tuomas Borman
+  email: tvborm@utu.fi
+package: alabaster.treese
+date: "Revised: October 28, 2026"
+output:
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Saving and loading TreeSummarizedExperiments}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo = FALSE}
+library(BiocStyle)
+self <- Biocpkg("alabaster.treese")
+knitr::opts_chunk[["set"]](error = FALSE, warning = FALSE, message = FALSE)
+```
+
+# Overview 
+
+The `r self` package implements methods to save `TreeSummarizedExperiment`
+objects to file artifacts and load them back into R. It extends
+`r Biocpkg("alabaster.sce")`, which handles everything from the
+`SingleCellExperiment` parent class. Check out the `r Biocpkg("alabaster.base")`
+for more details on the motivation and concepts of the **alabaster** framework.
+
+# Quick start
+
+Given a `TreeSummarizedExperiment`, we can use `saveObject()` to save it inside
+a staging directory:
+
+```{r save}
+# Mock up a TreeSE with a row tree and reference sequences.
+library(TreeSummarizedExperiment)
+data(tinyTree)
+mat <- matrix(rpois(100, 10), ncol = 10)
+rownames(mat) <- tinyTree[["tip.label"]]
+colnames(mat) <- letters[1:10]
+
+tse <- TreeSummarizedExperiment(list(counts = mat), rowTree = tinyTree)
+tse[["stuff"]] <- LETTERS[1:10]
+referenceSeq(tse) <- Biostrings::DNAStringSet(rep("ACGT", nrow(tse)))
+tse
+
+# Save it into a staging directory.
+library(alabaster.treese)
+tmp <- tempfile()
+saveObject(tse, tmp)
+
+list.files(tmp, recursive = TRUE)
+```
+
+We can then load it back into the session with `readObject()`.
+
+```{r read}
+# Load the TreeSE back from disk.
+roundtrip <- readObject(tmp)
+class(roundtrip)
+```
+
+# On-disk representation
+
+Each tree in `rowTree()` or `colTree()` is saved as a list containing the
+fields of its `phylo` object, with the `edge` matrix split into `parent` and
+`child` vectors. We do not use Newick as it does not preserve the node numbering
+(which is referenced by `rowLinks()` and `colLinks()`) or labels containing
+special characters. Users who need a Newick file for other tools can always
+create one with `ape::write.tree()`. The links themselves are saved as data
+frames, while the `referenceSeq()` is saved as FASTA via
+`r Biocpkg("alabaster.string")`.
+
+# Session information {-}
+
+```{r session-info}
+sessionInfo()
+```
