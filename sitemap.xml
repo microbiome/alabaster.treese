@@ -1,11 +1,11 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/articles/index.html</loc></url>
-<url><loc>/articles/userguide.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/readTreeSummarizedExperiment.html</loc></url>
-<url><loc>/reference/saveTreeSummarizedExperiment.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/404.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/articles/index.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/articles/userguide.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/authors.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/index.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/reference/index.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/reference/readTreeSummarizedExperiment.html</loc></url>
+<url><loc>https://microbiome.github.io/alabaster.treese/reference/saveTreeSummarizedExperiment.html</loc></url>
 </urlset>
 
