@@ -10,7 +10,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/microbiome/alabaster.treese/blob/quarto-vignette/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/microbiome/alabaster.treese/blob/devel/DESCRIPTION)
 
 Borman T, Lahti L (2026). *alabaster.treese: Load and Save
 TreeSummarizedExperiment from File*. R package version 0.99.1,
