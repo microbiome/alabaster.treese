@@ -4,3 +4,5 @@
 ^\.Rproj\.user$
 ^_pkgdown\.yml$
 ^docs$
+^vignettes/\.quarto$
+^vignettes/.*_files$

@@ -1,6 +1,6 @@
 Package: alabaster.treese
 Title: Load and Save TreeSummarizedExperiment from File
-Version: 0.99.0
+Version: 0.99.1
 Date: 2026-10-28
 Authors@R:
     c(person(given = "Tuomas", family = "Borman", role = c("aut", "cre"),
@@ -39,7 +39,8 @@ Suggests:
     knitr,
     testthat,
     BiocStyle,
-    rmarkdown
-VignetteBuilder: knitr
+    quarto
+VignetteBuilder: quarto
+SystemRequirements: Quarto command line tools (https://github.com/quarto-dev/quarto-cli)
 Encoding: UTF-8
 Config/roxygen2/version: 8.1.0

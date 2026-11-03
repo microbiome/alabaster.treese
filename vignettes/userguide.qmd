@@ -1,19 +1,26 @@
 ---
 title: Saving `TreeSummarizedExperiment`s to artifacts and back again
-package: alabaster.treese
 date: "Revised: October 29, 2026"
-output:
-  BiocStyle::html_document
+format:
+  html:
+    toc: true
+    number-sections: true
+    embed-resources: true
 vignette: >
   %\VignetteIndexEntry{Saving and loading TreeSummarizedExperiments}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    error: false
+    warning: false
+    message: false
 ---
 
-```{r setup, echo = FALSE}
+```{r setup}
+#| echo: false
 library(BiocStyle)
 self <- Biocpkg("alabaster.treese")
-knitr::opts_chunk[["set"]](error = FALSE, warning = FALSE, message = FALSE)
 ```
 
 # Overview 
@@ -29,7 +36,8 @@ for more details on the motivation and concepts of the **alabaster** framework.
 Given a `TreeSummarizedExperiment`, we can use `saveObject()` to save it inside
 a staging directory:
 
-```{r save}
+```{r}
+#| label: save
 # Mock up a TreeSE with a row tree and reference sequences.
 library(TreeSummarizedExperiment)
 data(tinyTree)
@@ -52,7 +60,8 @@ list.files(tmp, recursive = TRUE)
 
 We can then load it back into the session with `readObject()`.
 
-```{r read}
+```{r}
+#| label: read
 # Load the TreeSE back from disk.
 roundtrip <- readObject(tmp)
 class(roundtrip)
@@ -69,8 +78,9 @@ create one with `ape::write.tree()`. The links themselves are saved as data
 frames, while the `referenceSeq()` is saved as FASTA via
 `r Biocpkg("alabaster.string")`.
 
-# Session information {-}
+# Session information {.unnumbered}
 
-```{r session-info}
+```{r}
+#| label: session-info
 sessionInfo()
 ```
