@@ -10,16 +10,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/microbiome/alabaster.treese/blob/devel/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/microbiome/alabaster.treese/blob/quarto-vignette/DESCRIPTION)
 
 Borman T, Lahti L (2026). *alabaster.treese: Load and Save
-TreeSummarizedExperiment from File*. R package version 0.99.0,
+TreeSummarizedExperiment from File*. R package version 0.99.1,
 <https://github.com/microbiome/alabaster.treese>.
 
 @Manual{,\
   title = {alabaster.treese: Load and Save TreeSummarizedExperiment from File},\
   author = {Tuomas Borman and Leo Lahti},\
   year = {2026},\
-  note = {R package version 0.99.0},\
+  note = {R package version 0.99.1},\
   url = {https://github.com/microbiome/alabaster.treese},\
 }
